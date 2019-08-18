@@ -1,0 +1,155 @@
+​<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProjectOne</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/item.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/todo.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm" id="navbar-head">
+        <a href="home.html" class="navbar-brand my-css" id="home-logo">HOME</a>
+        <button class="navbar-toggler" style="background:rgba(188, 212, 235, 0.4); border:none;">
+            <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#navbar-menu">
+                <img src="assets/images/a.png" width= 30px; height="30px;">
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="news.html" class="nav-link my-css nav-item">NEWS</a>
+                </li>
+                <!-- <li class="navbar-item">
+                    <a href="weather.html" class="nav-link my-css nav-item">WEATHER</a>
+                </li> -->
+                <li class="navbar-item">
+                    <a href="events.html" class="nav-link my-css nav-item">EVENTS</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="books.html" class="nav-link my-css nav-item">BOOKS</a>
+                </li>
+            </ul> 
+        </div>
+    </nav>
+
+    <div class="container">
+        <input type="text" class="txtb" id="myTodoList" placeholder="Add a task">
+            <div class="taskList" id="todoList">
+                <h3> Task to be done</h3>
+
+            </div>
+
+            <!-- <div class="taskDone" id="todoListDone"></div>
+                for some reason this container doesnot work
+
+            </div> -->
+
+    <!-- <footer>
+        <div class="content">
+            Copyright &copy;
+        </div>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="assets/js/todo.js"></script> -->
+    <script type="text/javascript">
+        $(".txtb").on("keyup",function(e){
+          //13  means enter button
+          if(e.keyCode == 13 && $(".txtb").val() != "")
+          {
+            var task = $("<div class='task'></div>").text($(".txtb").val());
+            var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+              var p = $(this).parent();
+              p.fadeOut(function(){
+                p.remove();
+              });
+            });
+    
+    
+            var check = $("<i class='fas fa-check'></i>").click(function(){
+              var p = $(this).parent();
+              p.fadeOut(function(){
+                $(".taskDone").append(p);
+                p.fadeIn();
+              });
+              $(this).remove();
+            });
+    
+            task.append(del,check);
+            $(".taskList").append(task);
+              //to clear the input
+            $(".txtb").val("");
+          }
+        });
+      </script>
+
+    <!-- <script>
+   var Config = {
+      apiKey: "AIzaSyCzl7gPXLH1y22Jot8jlEdKo2uqBHJJUl0",
+      authDomain: "first-project-07-30-019.firebaseapp.com",
+      databaseURL: "https://first-project-07-30-019.firebaseio.com",
+      projectId: "first-project-07-30-019",
+      storageBucket: "",
+      messagingSenderId: "607289516969",
+      appId: "1:607289516969:web:01d0ce68b546b5af"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(Config)
+    const db = firebase.database()
+
+    $('#todoSubmit').on('click', () => {
+        event.preventDefault();
+
+    const todo = $('#todo-list').val().trim();
+    // todo_month = $('#todo-month').val().trim();
+    // todo_day = $('#todo-day').val().trim();
+    // todo_year =$('#todo-year').val().trim();
+    const todoAdd = $('#todo-address').val().trim();
+
+db.ref().push({
+    todoList : todo,
+    // todoMonth: 'todo-address',
+    // todoDay : 'todo-day',
+    // todoYear: 'todo-year',
+    todoAddress : todoAdd
+
+})
+
+db.ref().on('value', snapshot => {
+    
+   var data = snapshot.val()
+    console.log(data)
+    for (var key in data) {
+        var value = data[key];
+        var a = $('#todoList').append(`<p class="list-value">${value.todoList}</p>`+`<button class="list-value">${value.todoAddress}</button>`)
+        $('#todo-container').append(a)
+    }
+
+});
+
+});
+    </script> -->
+
+
+</body>
+</html>

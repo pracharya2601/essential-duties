@@ -1,0 +1,128 @@
+​<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProjectOne</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/item.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/news.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm" id="navbar-head">
+        <a href="home.html" class="navbar-brand my-css" id="home-logo">HOME</a>
+        <button class="navbar-toggler" style="background:rgba(188, 212, 235, 0.4); border:none;">
+            <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#navbar-menu">
+                <img src="assets/images/a.png" width= 30px; height="30px;">
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="todo.html" class="nav-link my-css nav-item">TODO</a>
+                </li>
+                <!-- <li class="navbar-item">
+                    <a href="weather.html" class="nav-link my-css nav-item">WEATHER</a>
+                </li> -->
+                <li class="navbar-item">
+                    <a href="events.html" class="nav-link my-css nav-item">EVENTS</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="books.html" class="nav-link my-css nav-item">BOOKS</a>
+                </li>
+            </ul> 
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row row-search-container">
+            <div class="col my-col">
+                <input class="my-input" type="text" id="search-list" for="search_news" name="input-list" placeholder="Search News ..">
+                <input class="my-input" id="btn-submit" type="submit"> 
+            </div>
+        </div>
+        <div class="row row-item-container" id ="newsFeed">
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+    <!-- <footer id="item-footer">
+        <div class="content">
+            Copyright &copy;
+        </div>
+    </footer> -->
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+
+    <!-- <script src="assets/js/news.js"></script> -->
+    <script type = "text/javascript">
+
+// var Config = {
+//         apiKey: "AIzaSyCzl7gPXLH1y22Jot8jlEdKo2uqBHJJUl0",
+//         authDomain: "first-project-07-30-019.firebaseapp.com",
+//         databaseURL: "https://first-project-07-30-019.firebaseio.com",
+//         projectId: "first-project-07-30-019",
+//         storageBucket: "",
+//         messagingSenderId: "607289516969",
+//         appId: "1:607289516969:web:24f3c9cfccfe9132"
+//     };
+
+//     // Initialize Firebase
+//     firebase.initializeApp(Config)
+//     const database = firebase.database()
+
+//     $('#btn-submit').on('click', function () {
+//         event.preventDefault();
+//         var userNews = $('#search-list').val();
+//         firebase.database().ref().set({
+//         userBookSearch: userBook
+//   }); 
+
+//     });
+
+
+    //  news api
+    $('#btn-submit').on('click', function () {
+        event.preventDefault();
+        $('#newsFeed').empty();
+        var v = $('#search-list').val();
+        var queryURL = "https://newsapi.org/v2/everything?q=" + v + "&from=2019-08-17&sortBy=publishedAt&apiKey=6b047ed35aeb429b884ca4788713b4d8"
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            for (var i = 0; i < 5; i++) {
+                var p = $('<h2>').text('Title: ' + response.articles[i].title);
+                var c = $('<p>').text(response.articles[i].description);
+                var img = $('<img>');
+                img.attr('src', response.articles[i].urlToImage);
+                var u = $('<a class="a-link">').text(response.articles[i].url).attr('href', response.articles[i].url).attr("target", '_blank');
+                var newsList = $('<div class="res-news">').append(p, c, img, u);
+                $('#newsFeed').append(newsList);
+            }
+
+        })
+    });
+</script>
+</body>
+</html>

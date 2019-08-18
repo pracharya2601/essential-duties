@@ -1,0 +1,332 @@
+
+
+
+
+/* css file for all header and footer */
+body{
+    background-image: linear-gradient(120deg,#adff14a1,#b470ece8);
+ }
+
+#navbar-head {
+    background-image: linear-gradient(120deg,#d5f80ca1,#396d86);
+    margin:5px 5px 5px 5px;
+    padding: 15px;
+    z-index: 100;
+ }
+a {
+     color:black;
+
+ }
+
+.my-css{
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    text-decoration:none;
+    text-align: center;
+    border-radius: 10px;
+ }
+.nav-item {
+margin-left:5px;
+background-image: linear-gradient(120deg,#566c8bc2,#a5c6e0e8);
+}
+
+#home-logo {
+background-image: linear-gradient(120deg,#295ff3a1,#b87a62e8);
+float: left;
+}
+
+#navbar-menu {
+margin-right: auto;
+}
+
+/* added positioning & bottom 0% and width so that the footer stays at the bottom.  */
+footer{
+    background-color:rgba(37, 37, 167, 0.4);
+    position:relative;
+    bottom:0;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 15px 0;
+    margin-top:5%;
+    text-align: center;
+    width:99%;
+
+}
+
+/* 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* HOME HOME HOME............>>>>>>>>>>>>>> */
+
+
+.content-snapshot {
+    display:inline;
+    margin:2.5%;
+}
+/* #col-mid-snap {
+    border: 1px solid blue;
+} */
+.my-col-x {
+    width: 36%;
+
+}
+.my-col-y {
+    width: 18%;
+    height: 100%;
+}
+.my-row {
+    height: 560px;
+    text-align: center;
+    display: block;
+    
+}
+h1 {
+    font-size: 100px;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 {
+    font-size: 70px;
+    padding: 20px;
+    margin-top: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.row-snap {
+    width: 100%;
+    height: 260px;
+    /* border: 1px solid red; */
+
+}
+.row-down {
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+/* TODO TODO TODO ,....................... */
+
+
+.list-value {
+    display: block;
+    background-color: blanchedalmond;
+    margin: 2px;
+}
+body {
+    background-image: linear-gradient(120deg,#e2e6de,#3188fb);
+}
+.list-value {
+    display: block;
+    background-color: blanchedalmond;
+    margin: 2px;
+}
+#container {
+    height: 500px;
+    width: 560px;
+    background-color: bisque;
+    
+}
+.txtb {
+    width:100%;
+    border:1px solid #000;
+    background: none;
+    padding: 10px;
+    outline:none;
+    font-size:15px;
+}
+h3 {
+    margin:10px 0;
+}
+.task {
+    width:100%;
+    background:rbga(255,255,255,0.5);
+    padding:18px;
+    margin: 6px 0;
+    overflow:hidden;
+}
+.task i {
+    float:right;
+    margin-left:20px;
+    cursor: pointer;
+
+}
+.task-done .task-list {
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+}
+/* <<<<<<<<<<<<<<<>>>>>>>>>>>>> */
+/* BOOKS */
+body{
+    background-image: linear-gradient(120deg,#1d2263a1,#aa686ce8);
+ }
+#my-todo-list {
+    width: 89%;
+}
+h2{
+    margin-top:30px;
+    margin-right:8%;
+    margin-left:8%;
+}
+.res-book img{
+    /* position:static; */
+    margin-right:8%;
+    margin-left:8%;
+}
+
+h4{
+    width:100%;
+    margin-right:8%;
+    margin-left:8%;
+}
+
+p{
+    float:left;
+    width:70%;
+    margin-right:8%;
+    margin-left:8%;
+
+}
+.res-book a {
+    float:left;
+    width:70%;
+    margin-right:8%;
+    margin-left:8%;
+    margin-bottom: 40px;
+}
+
+.res-book{
+    align-content: center;
+    width:75%;
+    border: 1px solid rgba(37, 37, 167, 0.6);
+    margin:8px;
+
+}
+#bookTitle div:last-child {
+margin-bottom: 50px;;
+}
+
+
+/* ............................. */
+
+/* css for content of the books, events, news, todo and weather */
+.my-input {
+    margin:2px;
+    background-color: blanchedalmond;
+    border: 1px solid rgba(37, 37, 167, 0.6);
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+#btn-submit{
+    width:80px;
+}
+.my-col {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 10px;
+}
+#todo-list {
+    width:45%;
+}
+#todo-day {
+    width:6%;
+}
+#todo-month {
+    width: 6%;
+}
+#todo-year {
+    width: 7.5%;
+}
+#todo-address {
+    width: 21%;
+}
+.row-item-container {
+    margin-top:10px;
+    height:560px;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    /* border: 1px solid rgba(37, 37, 167, 0.6); */
+}
+#my-todo-list {
+    width: 89%;
+}
+
+
+/* <<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>> */
+
+/* NEWS<<<<<<>>>>>>>>>>>>>>>> */
+
+body{
+    background-image: linear-gradient(120deg,#cec8ffa1,#dfd988e8);
+ }
+#search-list {
+    width: 89%;
+}
+h2{
+    margin-top:50px;
+    margin-right:8%;
+    margin-left:8%;
+}
+#newsFeed img{
+    padding:0;
+    width:350px;
+    margin-left:8%        }
+p{
+    float:right;
+    width:40%;
+    margin-right: 8%;
+
+}
+.a-link{
+    margin-right:8%;
+    margin-left:8%;
+}
+.res-news {
+    align-content: center;
+    width:100%;
+    border: 1px solid rgba(37, 37, 167, 0.6);
+    margin:8px;
+}
+.res-news a {
+    margin-bottom: 30px;
+}
+
+#newsFeed div:last-child {
+    margin-bottom: 50px;
+}
+
+
+
+/* EVENTS..................................>>>> */
+
+img{
+    width:400px;
+    margin-left:20%;
+    margin-right:20%;
+    padding: 10px;
+    
+}
+p{
+    font-size:30px;
+    text-decoration:bold;
+    margin-left:150px;
+    padding: 10px;
+}
+.res-event {
+    align-content: center;
+    width:100%;
+    border: 1px solid rgba(37, 37, 167, 0.6);
+    margin:8px;
+}
+.res-event a {
+    margin-bottom: 30px;
+}
+#eventTitle div:last-child {
+    margin-bottom: 50px;
+}
