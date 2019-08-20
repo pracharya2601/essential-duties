@@ -1,96 +1,71 @@
-​<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ProjectOne</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/item.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/events.css">
-    <style>
-body{
-    background-image: linear-gradient(120deg,#cdd4d3a1,#796f59e8);
- }
-#my-todo-list {
-    width: 89%;
-}
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>project-01</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- link to the css file -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <style>
+    body {
+      background-color:wheat;
+    }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm" id="navbar-head">
-        <a href="home.html" class="navbar-brand my-css" id="home-logo">HOME</a>
-        <button class="navbar-toggler" style="background:rgba(188, 212, 235, 0.4); border:none;">
-            <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#navbar-menu">
-                <img src="assets/images/a.png" width= 30px; height="30px;">
-            </span>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(120deg,#cdd4d3a1,#796f59e8);">
+        <a class="navbar-brand" href="home.html">ESSENTIAL DUTIES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-item">
-                    <a href="todo.html" class="nav-link my-css nav-item">TODO</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="news.html" class="nav-link my-css nav-item">NEWS</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a href="weather.html" class="nav-link my-css nav-item">WEATHER</a>
-                </li> -->
-                <li class="navbar-item">
-                    <a href="books.html" class="nav-link my-css nav-item">BOOKS</a>
-                </li>
-            </ul> 
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="todo.html">TODO </a>
+            <a class="nav-item nav-link" href="news.html">NEWS </a>
+            <a class="nav-item nav-link" href="events.html">EVENTS </a>
+            <a class="nav-item nav-link" href="books.html">BOOKS </a>
+          </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row row-search-container">
-            <div class="col my-col">
-                <input class="my-input" type="text" id="my-todo-list" name="input-list" placeholder="Search Your event ..">
-                <input class="my-input" id="btn-submit" type="submit"> 
-            </div>
-        </div>
-        <div class="row row-item-container" id = "eventTitle">
+    <!-- container here -->
 
+    <div class="container">
+      <div class="row row-search-container">
+        <div class="col my-col">
+          <form class="form-all">
+            <input class="my-input" type="text" id="search_events" name="input-list" placeholder="Search Your event ..">
+            <button class="my-btn" id="btn-submitE" type="submit">search</button>
+          </form>
         </div>
+      </div>
+      <div class="row row-item-container" id = "eventTitle">
+
+      </div>
     </div>
 
-    <!-- <footer id="item-footer">
-        <div class="content">
-            Copyright &copy;
-        </div>
-    </footer> -->
+<!-- footerstart here -->
+   <nav class="navbar fixed-bottom navbar-light bg-light">
+      <a class="nav-item nav-link" href="https://github.com/pracharya2601/project-01-todo-news-events-books target="_blank""><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
+   </nav>
+  <!-- boootstrap file  -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+  <!-- firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-    <script>
-    $('#btn-submit').on('click', function () {
-        event.preventDefault();
-        $('#eventTitle').empty();
-        var e = $('#my-todo-list').val();
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3"
+  <!-- js link -->
+  <script src="assets/js/app.js"></script>
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response)
-            for (var i = 0; i < 5; i++) {
-                var t = $('<p>').text( response._embedded.events[i].name);
-                var img = $('<img>');
-                img.attr('src', response._embedded.events[i].images[i].url);
-                var l = $('<a>').text('URL:' + response._embedded.events[i].url).attr('href', response._embedded.events[i].url);
-                var evRes = $('<div class="res-event">').append(t, img, l)
-                $('#eventTitle').append(evRes);
-            }
-        })
-    })
-    </script>
+   <!-- jquary file here -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </body>
 </html>

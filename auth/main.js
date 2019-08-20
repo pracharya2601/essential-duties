@@ -1,6 +1,6 @@
-var mainApp = {};
+var mainApp = {}; //prevent user directly to the html
 (function(){
-var mainContainer = document.getElementById("main_container");
+var mainContainer = document.querySelector("main_container");
 
     var logtout =  function(){
         firebase.auth().signOut().then(function(){
@@ -10,6 +10,8 @@ var mainContainer = document.getElementById("main_container");
     }
 
 var init = function(){
+
+  //fron on AuthStateChance and copy 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
@@ -19,6 +21,7 @@ var init = function(){
           // No user is signed in.
           mainContainer.style.display = "none";
           console.log("redirect");
+          //redirect to login page
           window.location.replace("login.html");
         }
       });
