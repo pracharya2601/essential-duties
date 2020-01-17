@@ -1,5 +1,6 @@
 <h1> essentialDuties </h1>
-UC Berkeley Extention COding Bootcamp - Project-1
+UC Berkeley Extention Coding Bootcamp - Project-1
+<br>
 Go to the App : <a href="https://pracharya2601.github.io/unit-4-game/" target="_/blank"> essentialDuties </a>
 
 <h2>Overview</h2>
