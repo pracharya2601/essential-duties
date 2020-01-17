@@ -85,7 +85,7 @@ var Config = {
             var img = $('<img height="200px" width="140px">');
             img.attr('src', bookObs.imageLinks.thumbnail).attr('href',bookObs.previewLink);
   
-            var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Ticket </button></a>`).text("Buy a Ticket");
+            var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Ticket </button></a>`).text("Buy a Book");
             dBtn.attr("href", bookObs.previewLink);
   
             var res = $('<div class="res-book">').append(c, au, summary, img, dBtn);
