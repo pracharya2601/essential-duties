@@ -61,13 +61,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <!-- js link -->
-  <script src="assets/js/app.js"></script>
+  <!-- <script src="assets/js/app.js"></script> -->
 
   <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDqClZJedWs-CYIUnOrNKQ7qMappE1Iga0",
+        authDomain: "contact-form-5a3b5.firebaseapp.com",
+        databaseURL: "https://contact-form-5a3b5.firebaseio.com",
+        projectId: "contact-form-5a3b5",
+        storageBucket: "contact-form-5a3b5.appspot.com",
+        messagingSenderId: "680830081098",
+        appId: "1:680830081098:web:4e338460f06165de39aeb3"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //references 
+    // var contactRef = firebase.database().ref('Contact');
+    // var messagesRef = contactRef.child('messages');
+    // var emailRef = contactRef.child('email');
+    // var todoRef = contactRef.child('todo');
+
+    
+
   $(".txtb").on("keyup",function(e){
   //13  means enter button
   if(e.keyCode == 13 && $(".txtb").val() != "")
   {
+    
     var task = $("<div class='task'></div>").text($(".txtb").val());
     var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
       var p = $(this).parent();

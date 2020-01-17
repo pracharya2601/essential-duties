@@ -16,60 +16,33 @@ var Config = {
   
   //TODO APP JA FILE STARTER>>>>>>>>>>>>>>>>>>
   
-  // // Your web app's Firebase configuration
-  // var Config = {
-  //   apiKey: "AIzaSyCzl7gPXLH1y22Jot8jlEdKo2uqBHJJUl0",
-  //   authDomain: "first-project-07-30-019.firebaseapp.com",
-  //   databaseURL: "https://first-project-07-30-019.firebaseio.com",
-  //   projectId: "first-project-07-30-019",
-  //   storageBucket: "",
-  //   messagingSenderId: "607289516969",
-  //   appId: "1:607289516969:web:24f3c9cfccfe9132"
-  // };
-  // // Initialize Firebase
-  // firebase.initializeApp(Config);
+  $(".txtb").on("keyup",function(e){
+    //13  means enter button
+    if(e.keyCode == 13 && $(".txtb").val() != "")
+    {
+      var task = $("<div class='task'></div>").text($(".txtb").val());
+      var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+        var p = $(this).parent();
+        p.fadeOut(function(){
+          p.remove();
+        });
+      });
+      
+      var check = $("<i class='fas fa-check'></i>").click(function(){
+        var p = $(this).parent();
+        p.fadeOut(function(){
+          $(".taskList").append(p);
+          p.fadeIn();
+        });
+        $(this).remove();
+      });
   
-  // // Get a reference to the database service
-  // var auth = firebase.auth();
-  
-  // $('.submit').oc('click', function(){
-  //   event.preventDefault();
-  //   var todo = $('#list').val();
-  //   var address = $('#address').val();
-  
-  //   firebase.database.ref(todo).push({
-  //     userAdd : address
-  //   });
-  //   debugger;
-  
-  // });
-  // database.ref().on("value", function(){
-  
-  //   var data = snapshot.val();
-  //   for (var key in data){
-  //     var value =  data[key];
-  //     var task = $("<div class='taskToBeDone'></div>").text(key + ' - ' + value.userAdd);
-  //     var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
-  //       var p = $(this).parent();
-  //       p.fadeOut(function(){
-  //         p.remove();
-  //       });
-  //     });
-  //     var check = $("<i class='fas fa-check'></i>").click(function(){
-  //       var p = $(this).parent();
-  //       p.fadeOut(function(){
-  //         $(".taskDone").append(p);
-  //         p.fadeIn();
-  
-  //       });
-  //       $(this).remove();
-  //     });
-  //     task.append(del,check);
-  //     $(".taskList").append(task);
-  //       //to clear the input
-  //     $(".txtb").val("");
-  //   }
-  // });
+      task.append(del,check);
+      $(".taskList").append(task);
+        //to clear the input
+      $(".txtb").val("");
+    }
+  });
   
   //FOR SOME REASON ^^^^^^^^ CODE DOESNOT WORK
   
