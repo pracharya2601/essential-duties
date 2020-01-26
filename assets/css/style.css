@@ -33,7 +33,7 @@ marquee #para1 {
 }
 .fling-minislide:hover, .fling-minislide-1:hover, .fling-minislide-2:hover, .fling-minislide-3:hover {
     border: 1px solid black;
-    border-radius: 50%;
+    border-radius: 100px;
 }
 .fling-minislide>img, .fling-minislide-1>img, .fling-minislide-2>img, .fling-minislide-3>img { 
     position:absolute;
