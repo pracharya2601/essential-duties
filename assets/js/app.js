@@ -117,29 +117,32 @@ var Config = {
     var v = $('#search_term').val();
   
     $("form").trigger("reset");
-  
-    var queryURL = "https://newsapi.org/v2/everything?q=" + v + "&from=2019-08-17&sortBy=publishedAt&apiKey=6b047ed35aeb429b884ca4788713b4d8";
+    8
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + v + "&api-key=pqTAhnco7pVR9FUqC09qgrNtbfwV1CZH";
   
     $.ajax({
   
-        url: queryURL,
-        method: "GET"
+      url: queryURL,
+      method: "GET"
   
     }).then(function (response) {
+      console.log(response);
+  
+  
+      for (var i = 0; i < 7; i++) {
         console.log(response);
   
-        for (var i = 0; i < 5; i++) {
-            var p = $('<h2>').text('Title: ' + response.articles[i].title);
-            var img = $('<img height="200px" width="290px">');
-            img.attr('src', response.articles[i].urlToImage);
-            var c = $('<p class="des-item">').text(response.articles[i].description);
+        var p = $('<h5>').text('Title: ' + response.response.docs[i].headline.main);
+        var img = $('<img height="200px" width="290px">');
+        img.attr('src', 'https://static01.nyt.com/' + response.response.docs[i].multimedia[0].url);
+        var c = $('<p class="des-item">').text(response.response.docs[i].snippet);
   
-            var dBtn = $(`<a class="btn-link" target="_blank"><button> For more Go to link </button></a>`).text("For more Go to link");
-            dBtn.attr("href", response.articles[i].url);
+        var dBtn = $(`<a class="btn-link" target="_blank"><button> For more Go to link </button></a>`).text("For more Go to link");
+        dBtn.attr("href", response.response.docs[i].web_url);
   
-            var newsList = $('<div class="res-news">').append(p, c, img, dBtn);
-            $('#searchNews').prepend(newsList);
-        }
+        var newsList = $('<div class="res-news">').append(p, img, c, dBtn);
+        $('#searchNews').prepend(newsList);
+      }
   
     })
   });

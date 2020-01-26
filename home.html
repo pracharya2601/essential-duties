@@ -7,12 +7,13 @@
    <title>project-01</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <!-- link to the css file for header and footer -->
-   <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
    <!-- link to the css file for home content -->
    <!-- <link rel="stylesheet" type="text/css" href="assets/css/home.css"> -->
    <!-- google authentation file -->
    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(120deg,#53a0e7d3,#8d8c428c);">
@@ -29,11 +30,81 @@
           </div>
         </div>
       </nav>
-<h1>home</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col" id="time">
+            <marquee behavior="scroll"><strong>Welcome To Our Essential Duties APP : <spam id="para1"></spam></strong></marquee> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-12 col-my-gap">
+            <a href="todo.html">
+              <div class="fling-minislide">
+      
+                <img class="img-project" src="assets/images/todo/todo-img-1.jpg" style="width:100%" alt="Slide 4" />
+
+                <img class="img-project" src="assets/images/todo/todo-img-3.png" style="width:100%" alt="Slide 3" />
+                
+                <img class="img-project" src="assets/images/todo/todo-img-2.jpg" alt="Slide 2" />
+                
+                <img class="img-project" src="assets/images/todo/todo-img-4.jpeg" style="width:100%" alt="Slide 1" />
+
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6 col-sm-12 col-my-gap">
+            <a href="news.html">
+            <div class="fling-minislide-1">
+      
+              <img class="img-project" src="assets/images/news/news-2.jpg" style="width:100%" alt="Slide 4" />
+
+              <img class="img-project" src="assets/images/news/news-1.jpg" style="width:100%" alt="Slide 3" />
+              
+              <img class="img-project" src="assets/images/news/news-3.jpeg" alt="Slide 2" />
+              
+              <img class="img-project" src="assets/images/news/news-4.jpg" style="width:100%" alt="Slide 1" />
+
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-12 col-my-gap">
+            <a href="events.html">
+            <div class="fling-minislide-2">
+      
+              <img class="img-project" src="assets/images/events/event-4.jpeg" style="width:100%" alt="Slide 4" />
+
+              <img class="img-project" src="assets/images/events/event-1.jpg" style="width:100%" alt="Slide 3" />
+              
+              <img class="img-project" src="assets/images/events/events-3.jpg" alt="Slide 2" />
+              
+              <img class="img-project" src="assets/images/events/event-2.jpg" style="width:100%" alt="Slide 1" />
+
+            </div>
+            </a>
+          </div>
+          <div class="col-lg-6 col-sm-12 col-my-gap">
+            <a href="books.html">
+            <div class="fling-minislide-3">
+      
+              <img class="img-project" src="assets/images/books/book-1.jpg" style="width:100%" alt="Slide 4" />
+
+              <img class="img-project" src="assets/images/books/book-2.webp" style="width:100%" alt="Slide 3" />
+              
+              <img class="img-project" src="assets/images/books/book-3.png" alt="Slide 2" />
+              
+              <img class="img-project" src="assets/images/books/book-4.jpg" style="width:100%" alt="Slide 1" />
+
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
 <!-- footerstart here -->
    <nav class="navbar fixed-bottom navbar-light bg-light">
       <a class="nav-item nav-link" href="https://github.com/pracharya2601/project-01-todo-news-events-books" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/GitHub_Logo.png" height="30px" width="110px"></a>
-    <button class="nav-item" onclick="mainApp.logout();">logout</button>
+    <!-- <button class="nav-item" onclick="mainApp.logout();">logout</button> -->
    </nav>
   <!-- boootstrap file  -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -42,5 +113,19 @@
    <!-- for firebase authentation -->
    <script src="auth/fireBase.js"></script>
    <script src="auth/main.js"></script>
+   <script>
+
+    document.getElementById("para1").innerHTML = formatAMPM();
+
+      function formatAMPM() {
+      var d = new Date(),
+          minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+          hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+          ampm = d.getHours() >= 12 ? 'pm' : 'am',
+          months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+      }
+   </script>
 </body>
 </html>
