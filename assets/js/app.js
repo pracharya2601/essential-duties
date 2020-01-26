@@ -13,7 +13,7 @@ var Config = {
     // Initialize Firebase
     firebase.initializeApp(Config)
     const database = firebase.database()
-  
+
   //TODO APP JA FILE STARTER>>>>>>>>>>>>>>>>>>
   
   $(".txtb").on("keyup",function(e){
@@ -160,26 +160,27 @@ var Config = {
   
   });
   
-      $('#btn-submitE').on('click', function () {
-          event.preventDefault();
-          $("form").trigger("reset");
-          var e = $('#search_events').val();
-          var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3"
-  
-          $.ajax({
-              url: queryURL,
-              method: "GET"
-          }).then(function (response) {
-              console.log(response)
-              for (var i = 0; i < 5; i++) {
-                  var t = $('<h2>').text( response._embedded.events[i].name);
-                  var img = $('<img height="200px" width="290px">');
-                  img.attr('src', response._embedded.events[i].images[i].url);
-                  var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Ticket </button></a>`).text("Buy a Ticket");
-                  dBtn.attr("href", response._embedded.events[i].url);
-  
-                  var evRes = $('<div class="res-event">').append(t, img, dBtn);
-                  $('#eventTitle').prepend(evRes);
-              }
-          })
+  $('#btn-submitE').on('click', function () {
+      event.preventDefault();
+      $("form").trigger("reset");
+      var e = $('#search_events').val();
+      var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&keyword=" + e + "&apikey=BnIV3w1sOWnMwpB1TzcGSJK7FDnDvCF7&limit=3"
+
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+      }).then(function (response) {
+          console.log(response)
+          for (var i = 0; i < 5; i++) {
+              var t = $('<h2>').text( response._embedded.events[i].name);
+              var img = $('<img height="200px" width="290px">');
+              img.attr('src', response._embedded.events[i].images[i].url);
+              var dBtn = $(`<a class="btn-link" target="_blank"><button> Buy a Ticket </button></a>`).text("Buy a Ticket");
+              dBtn.attr("href", response._embedded.events[i].url);
+
+              var evRes = $('<div class="res-event">').append(t, img, dBtn);
+              $('#eventTitle').prepend(evRes);
+          }
       })
+  })
+
