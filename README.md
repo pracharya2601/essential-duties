@@ -17,7 +17,7 @@ In this project,This app basically a todo with news events and books. We used 3 
 <hr>
 <img src="assets/images/todo.png" target="_/blank">
 <hr>
-<img src="assets/images/books.png" target="_/blank">
+<img src="assets/images/news.png" target="_/blank">
 <hr>
 <img src="assets/images/books.png" target="_/blank">
 <hr>
